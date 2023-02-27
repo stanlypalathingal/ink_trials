@@ -1,0 +1,199 @@
+{
+  "source": {
+    "hash": "0x38709e2b4c5322709af57312c47d4cb622dc6b210b29632a1f10ba914cf6f802",
+    "language": "ink! 3.4.0",
+    "compiler": "rustc 1.65.0-nightly"
+  },
+  "contract": {
+    "name": "delegator",
+    "version": "3.4.0",
+    "authors": [
+      "[your_name] <[your_email]>"
+    ]
+  },
+  "V3": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [
+            {
+              "label": "version",
+              "type": {
+                "displayName": [
+                  "u32"
+                ],
+                "type": 3
+              }
+            },
+            {
+              "label": "accumulator_code_hash",
+              "type": {
+                "displayName": [
+                  "Hash"
+                ],
+                "type": 4
+              }
+            }
+          ],
+          "docs": [
+            "Instantiate a `delegator` contract with the given sub-contract codes."
+          ],
+          "label": "new",
+          "payable": false,
+          "selector": "0x9bae9d5e"
+        }
+      ],
+      "docs": [],
+      "events": [],
+      "messages": [
+        {
+          "args": [],
+          "docs": [
+            " Returns the `accumulator` value."
+          ],
+          "label": "get",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "i32"
+            ],
+            "type": 5
+          },
+          "selector": "0x2f865bd9"
+        },
+        {
+          "args": [
+            {
+              "label": "by",
+              "type": {
+                "displayName": [
+                  "i32"
+                ],
+                "type": 5
+              }
+            }
+          ],
+          "docs": [
+            " Returns the `accumulator` value."
+          ],
+          "label": "inc",
+          "mutates": true,
+          "payable": false,
+          "returnType": null,
+          "selector": "0x1d32619f"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "struct": {
+                "fields": [
+                  {
+                    "layout": {
+                      "struct": {
+                        "fields": [
+                          {
+                            "layout": {
+                              "cell": {
+                                "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                                "ty": 0
+                              }
+                            },
+                            "name": "account_id"
+                          }
+                        ]
+                      }
+                    },
+                    "name": "inner"
+                  }
+                ]
+              }
+            },
+            "name": "accumulator"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "AccountId"
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 2
+            }
+          }
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 1,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "Hash"
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "primitive": "i32"
+          }
+        }
+      }
+    ]
+  }
+}
